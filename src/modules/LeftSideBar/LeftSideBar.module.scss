@@ -1,0 +1,11 @@
+@import '../../global.scss';
+
+.leftSideBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $left-side-bar-width;
+    height: 100%;
+
+    background-color: aqua;
+}
