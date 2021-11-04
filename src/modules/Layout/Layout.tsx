@@ -3,6 +3,7 @@ import { FC } from 'react';
 
 import { Search } from '../Search';
 import { Service } from '../Service';
+import { Core } from './Core';
 import css from './Layout.module.scss';
 
 const services = [
@@ -90,8 +91,7 @@ const services = [
 
 export const Layout: FC = observer(() => {
     return (
-      <div className={css.layout}>
-        <div className={css.core}>
+        <Core>
           <Search />
           <div className={css.wrapper}>
             {services.map((service, index) => (
@@ -105,7 +105,6 @@ export const Layout: FC = observer(() => {
               />
             ))}
           </div>
-        </div>
-      </div>
+        </Core>
     );
 })
