@@ -1,3 +1,10 @@
+@import './assets/fonts.scss';
+@import './global.scss';
+
+:root {
+    --services-gap: 26px;
+}
+
 html,
 #root {
     width: 100%;
@@ -10,6 +17,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 16px;
+    background-color: $body;
 }
 
 main {

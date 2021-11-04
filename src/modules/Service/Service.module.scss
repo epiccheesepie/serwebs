@@ -1,0 +1,87 @@
+@import '../../global.scss';
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 3 - (var(--services-gap)/3*2));
+    height: 210px;
+    border-radius: 16px;
+    transition: $timing;
+    cursor: pointer;
+    box-shadow: $service-shadow;
+
+    &:hover {
+        transform: scale(1.04);
+
+        .black {
+            opacity: 1;
+        }
+    }
+}
+
+.content {
+    display: flex;
+
+    padding: 0 40px;
+    width: 100%;
+    height: fit-content;
+}
+
+.logo {
+    width: 100%;
+    filter: drop-shadow(1px 1px 2px rgba(21, 20, 26, 0.75));
+}
+
+.black {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba($black, 0.3);
+    border-radius: 16px;
+    opacity: 0;
+    transition: $timing;
+}
+
+.tagsWrapper {
+    margin: 0 20px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.tag {
+    background: rgba($white, 0.2);
+    border-radius: 4px;
+    padding: 7px 16px;
+    line-height: 1.1;
+
+    & span {
+        font-size: 14px;
+        color: $white-text;
+        font-weight: 300;
+        text-shadow: $service-shadow;
+        line-height: 0;
+    }
+}
+
+.tagGreen {
+    background: rgba($green, 0.9);
+
+    & span {
+        font-weight: 600;
+    }
+}
+
+.tagGold {
+    background: rgba($gold, 0.9);
+
+    & span {
+        font-weight: 600;
+    }
+}
