@@ -10,7 +10,7 @@ export const LeftSideBar: FC = () => {
         <div className={css.wrapper}>
             <div className={css.content}>
                 <Link to='/' className={css.logo}>
-                    <img src="/main.png" alt="logo" />
+                    <img src="/white.png" alt="logo" />
                 </Link>
                 <div className={css.menu}>
                     {categories.map((item, index) => (

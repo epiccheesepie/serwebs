@@ -9,7 +9,7 @@ import css from './Layout.module.scss';
 const services = [
   {
     title: 'YouCanChoose',
-    logoImgSrc: 'http://youcanchoose.ru/img/logo.png',
+    logoImgSrc: 'http://localhost:3000/white.png',
     background: 'rgb(255, 113, 57)',
     src: 'http://youcanchoose.ru',
     recommendation: false,
@@ -17,7 +17,7 @@ const services = [
   },
   {
     title: 'YouCanChoose',
-    logoImgSrc: 'http://youcanchoose.ru/img/logo.png',
+    logoImgSrc: 'http://localhost:3000/white.png',
     background: '#0060DF',
     src: 'http://youcanchoose.ru',
     recommendation: false,
@@ -25,7 +25,7 @@ const services = [
   },
   {
     title: 'YouCanChoose',
-    logoImgSrc: 'http://youcanchoose.ru/img/logo.png',
+    logoImgSrc: 'http://localhost:3000/white.png',
     background: 'rgb(255, 113, 57)',
     src: 'http://youcanchoose.ru',
     recommendation: false,
@@ -41,7 +41,7 @@ const services = [
   },
   {
     title: 'YouCanChoose',
-    logoImgSrc: 'http://youcanchoose.ru/img/logo.png',
+    logoImgSrc: 'http://localhost:3000/white.png',
     background: '#00b104',
     src: 'http://youcanchoose.ru',
     recommendation: false,
@@ -49,7 +49,7 @@ const services = [
   },
   {
     title: 'YouCanChoose',
-    logoImgSrc: 'http://youcanchoose.ru/img/logo.png',
+    logoImgSrc: 'http://localhost:3000/white.png',
     background: '#000',
     src: 'http://youcanchoose.ru',
     recommendation: true,
@@ -65,7 +65,7 @@ const services = [
   },
   {
     title: 'YouCanChoose',
-    logoImgSrc: 'http://localhost:3000/main.png',
+    logoImgSrc: 'http://localhost:3000/white.png',
     background: '#000',
     src: 'http://youcanchoose.ru',
     recommendation: false,
@@ -81,7 +81,7 @@ const services = [
   },
   {
     title: 'YouCanChoose',
-    logoImgSrc: 'http://youcanchoose.ru/img/logo.png',
+    logoImgSrc: 'http://localhost:3000/white.png',
     background: '#0060DF',
     src: 'http://youcanchoose.ru',
     recommendation: false,
