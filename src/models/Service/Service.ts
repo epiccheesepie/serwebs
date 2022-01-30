@@ -1,11 +1,11 @@
 // eslint-disable-next-line import/no-internal-modules
-import { TagId } from '../../modules/Tag/TagId';
+import { TagId } from '../Tag/TagId';
 import { IService } from './IService';
 import { ServiceId } from './ServiceId';
 
 export class Service {
     // eslint-disable-next-line no-useless-constructor
-    public constructor(public dto: IService) {
+    public constructor(private readonly dto: IService) {
 
     }
 

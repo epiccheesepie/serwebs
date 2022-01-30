@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
-
 import { TagId } from './TagId';
 
 export interface ITag {
     id: TagId;
+    alias: string;
     parentId?: TagId;
     name: string;
-    icon: ReactElement;
+    icon: string;
+    count: number;
 }

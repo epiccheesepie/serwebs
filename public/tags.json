@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "Интернет",
+      "alias": "internet",
+      "icon": "https://appstorrent.ru/templates/appstorrent-a5501543bc/assets/img/icons/program/program.svg",
+      "count": 12
+    },
+    {
+      "id": 2,
+      "name": "Графика",
+      "alias": "graphics",
+      "icon": "https://appstorrent.ru/templates/appstorrent-a5501543bc/assets/img/icons/program/program.svg",
+      "count": 1
+    },
+    {
+      "id": 3,
+      "name": "Кино",
+      "alias": "movie",
+      "icon": "https://appstorrent.ru/templates/appstorrent-a5501543bc/assets/img/icons/program/program.svg",
+      "count": 123
+    }
+]

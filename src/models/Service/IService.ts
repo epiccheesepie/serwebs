@@ -1,5 +1,4 @@
-/* eslint-disable import/no-internal-modules */
-import { TagId } from '../../modules/Tag/TagId';
+import { TagId } from '../Tag';
 import { ServiceId } from './ServiceId';
 
 export interface IService {
