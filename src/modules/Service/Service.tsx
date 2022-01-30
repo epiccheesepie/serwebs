@@ -5,21 +5,21 @@ import { Tag } from '../../models';
 import css from './Service.module.scss';
 
 interface Props {
-    logoImgSrc: string;
+    logo: string;
     background: string;
     src: string;
     recommendation: boolean;
-    common: boolean;
+    gold: boolean;
     tags: Tag[];
 }
 
 export const Service: FC<Props> = (props) => {
-    const { logoImgSrc, background, tags, recommendation, common } = props;
+    const { logo, background, tags, recommendation, gold } = props;
 
     return (
         <div className={css.wrapper} style={{ background }}>
             <div className={css.content}>
-                <img className={css.logo} src={logoImgSrc} alt='ServiceLogo' />
+                <img className={css.logo} src={logo} alt='ServiceLogo' />
                 <div className={css.black}>
                     <div className={css.tagsWrapper}>
                         {recommendation && (
@@ -27,7 +27,7 @@ export const Service: FC<Props> = (props) => {
                                 <span>Рекомендация</span>
                             </div>
                         )}
-                        {common && (
+                        {gold && (
                             <div className={clsx(css.tag, css.tagGold)}>
                                 <span>Gold</span>
                             </div>

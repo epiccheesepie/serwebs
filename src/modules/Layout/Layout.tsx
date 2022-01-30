@@ -18,12 +18,12 @@ export const Layout: FC = observer(() => {
             {viewModel.services.map((service) => (
               <Service
                 key={service.id}
-                logoImgSrc={service.logo}
+                logo={service.logo}
                 background={service.background}
                 src={service.src}
                 tags={viewModel.getTagsForService(service.tags)}
                 recommendation={service.recommendation}
-                common={service.gold}
+                gold={service.gold}
               />
             ))}
           </div>

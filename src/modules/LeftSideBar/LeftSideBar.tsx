@@ -1,13 +1,14 @@
+import { observer } from 'mobx-react';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useInject } from '../../hooks';
-import { TagsStore } from '../../stores';
 import css from './LeftSideBar.module.scss';
 import { LeftSideBarItem } from './LeftSideBarItem';
+import { LeftSideBarViewModel } from './LeftSideBarViewModel';
 
-export const LeftSideBar: FC = () => {
-    const tags = useInject(TagsStore).tags;
+export const LeftSideBar: FC = observer(() => {
+    const viewModel = useInject(LeftSideBarViewModel);
 
     return (
         <div className={css.wrapper}>
@@ -16,11 +17,11 @@ export const LeftSideBar: FC = () => {
                     <img src="/white.png" alt="logo" />
                 </Link>
                 <div className={css.menu}>
-                    {tags.map((item, index) => (
+                    {viewModel.tags.map((item, index) => (
                         <LeftSideBarItem
                             key={String(index)}
                             title={item.name}
-                            count={item.count}
+                            count={viewModel.getCount(item.id)}
                             alias={item.alias}
                         />
                     ))}
@@ -28,4 +29,4 @@ export const LeftSideBar: FC = () => {
             </div>
         </div>
     );
-}
+})
