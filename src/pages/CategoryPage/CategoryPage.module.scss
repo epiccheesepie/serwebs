@@ -3,16 +3,32 @@
 .wrapper {
     display: flex;
     flex-direction: column;
+
+    &:first-child {
+        margin-top: 6px;
+    }
 }
 
 .category {
+    display: flex;
+
     margin-bottom: 14px;
+    border-bottom: 1px solid #505050;
+    padding-bottom: 8px;
+
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    color: $white-text;
 }
 
 .services {
     display: flex;
     flex-wrap: wrap;
 
+    margin-top: 14px;
+
     gap: var(--services-gap);
-    padding-bottom: 30px;
+    margin-bottom: 30px;
 }

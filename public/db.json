@@ -34,5 +34,23 @@
       "src": "http://youcanchoose.ru",
       "tags": [1,2,3],
       "recommendations": []
+    },
+    {
+      "id": 5,
+      "title": "YouCanChoose",
+      "logo": "http://localhost:3000/white.png",
+      "background": "rgb(255, 113, 57)",
+      "src": "http://youcanchoose.ru",
+      "tags": [3,5],
+      "recommendations": []
+    },
+    {
+      "id": 6,
+      "title": "YouCanChoose",
+      "logo": "http://localhost:3000/white.png",
+      "background": "rgb(255, 113, 57)",
+      "src": "http://youcanchoose.ru",
+      "tags": [3,5],
+      "recommendations": []
     }
 ]
