@@ -8,11 +8,11 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
+import { appModule } from './appModule';
 // eslint-disable-next-line import/no-internal-modules
 import { container } from './di/container';
-import { modulesModule } from './modules';
 
-modulesModule.init(container);
+appModule.init(container);
 
 ReactDOM.render(
   <React.StrictMode>

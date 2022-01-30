@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title": "YouCanChoose",
+      "logo": "http://localhost:3000/white.png",
+      "background": "rgb(255, 113, 57)",
+      "src": "http://youcanchoose.ru",
+      "tags": [],
+      "recommendations": [true]
+    },
+    {
+      "id": 2,
+      "title": "YouCanChoose",
+      "logo": "http://localhost:3000/white.png",
+      "background": "#0060DF",
+      "src": "http://youcanchoose.ru",
+      "tags": [],
+      "recommendations": []
+    },
+    {
+      "id": 3,
+      "title": "YouCanChoose",
+      "logo": "http://localhost:3000/white.png",
+      "background": "#00b104",
+      "src": "http://youcanchoose.ru",
+      "tags": [],
+      "recommendations": [true, true]
+    },
+    {
+      "id": 4,
+      "title": "YouCanChoose",
+      "logo": "http://localhost:3000/white.png",
+      "background": "rgb(255, 113, 57)",
+      "src": "http://youcanchoose.ru",
+      "tags": [],
+      "recommendations": []
+    }
+]
