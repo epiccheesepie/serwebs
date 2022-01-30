@@ -1,9 +1,9 @@
-import { TagId } from '../Tag';
+import { CategoryId } from '../Category';
 import { ServiceId } from './ServiceId';
 
 export interface IService {
     id: ServiceId;
-    tags: TagId[];
+    tags: CategoryId[];
     title: string;
     background: string;
     logo: string;

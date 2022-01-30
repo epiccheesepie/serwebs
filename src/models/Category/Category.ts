@@ -1,19 +1,19 @@
-import { ITag } from './ITag';
-import { TagId } from './TagId';
+import { ICategory } from './ICategory';
+import { CategoryId } from './CategoryId';
 
-export class Tag {
+export class Category {
     // eslint-disable-next-line no-useless-constructor
     public constructor(
-        private readonly dto: ITag
+        private readonly dto: ICategory
     ) {
 
     }
 
-    public get id(): TagId {
+    public get id(): CategoryId {
         return this.dto.id;
     }
 
-    public get parentId(): TagId | undefined {
+    public get parentId(): CategoryId | undefined {
         return this.dto.parentId;
     }
 

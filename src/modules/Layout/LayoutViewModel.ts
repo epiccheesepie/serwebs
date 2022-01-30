@@ -1,14 +1,14 @@
 import { injectable } from 'inversify';
 
-import { Service, Tag, TagId } from '../../models';
-import { ServicesStore, TagsStore } from '../../stores';
+import { Category, CategoryId, Service } from '../../models';
+import { CategoriesStore, ServicesStore } from '../../stores';
 
 @injectable()
 export class LayoutViewModel {
     // eslint-disable-next-line no-useless-constructor
     public constructor(
         private readonly servicesStore: ServicesStore,
-        private readonly tagsStore: TagsStore
+        private readonly categoriesStore: CategoriesStore
     ) {
 
     }
@@ -17,7 +17,7 @@ export class LayoutViewModel {
         return this.servicesStore.services;
     }
 
-    public getTagsForService(tagIds: TagId[]): Tag[] {
-        return tagIds.map(id => this.tagsStore.getTag(id));
+    public getTagsForService(categoryIds: CategoryId[]): Category[] {
+        return categoryIds.map(id => this.categoriesStore.getCategory(id));
     }
 }

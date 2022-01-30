@@ -1,2 +1,2 @@
 export * from './Service';
-export * from './Tag';
+export * from './Category';

@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-internal-modules
-import { TagId } from '../Tag/TagId';
+import { CategoryId } from '../Category/CategoryId';
 import { IService } from './IService';
 import { ServiceId } from './ServiceId';
 
@@ -21,7 +21,7 @@ export class Service {
         return this.dto.background;
     }
 
-    public get tags(): TagId[] {
+    public get tags(): CategoryId[] {
         return this.dto.tags;
     }
 

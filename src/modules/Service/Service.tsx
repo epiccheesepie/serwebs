@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { FC } from 'react';
 
-import { Tag } from '../../models';
+import { Category } from '../../models';
 import css from './Service.module.scss';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
     src: string;
     recommendation: boolean;
     gold: boolean;
-    tags: Tag[];
+    tags: Category[];
 }
 
 export const Service: FC<Props> = (props) => {

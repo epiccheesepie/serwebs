@@ -1,25 +1,25 @@
 import { injectable } from 'inversify';
 import { computed } from 'mobx';
 
-import { Tag, TagId } from '../../models';
-import { ServicesStore, TagsStore } from '../../stores';
+import { Category, CategoryId } from '../../models';
+import { CategoriesStore, ServicesStore } from '../../stores';
 
 @injectable()
 export class LeftSideBarViewModel {
     // eslint-disable-next-line no-useless-constructor
     public constructor(
         private readonly servicesStore: ServicesStore,
-        private readonly tagsStore: TagsStore
+        private readonly categoriesStore: CategoriesStore
     ) {
 
     }
 
     @computed
-    public get tags(): ReadonlyArray<Tag> {
-        return this.tagsStore.tags;
+    public get tags(): ReadonlyArray<Category> {
+        return this.categoriesStore.categories;
     }
 
-    public getCount(id: TagId): number {
+    public getCount(id: CategoryId): number {
         return this.servicesStore.services.filter(service => service.tags.includes(id)).length;
     }
 }
