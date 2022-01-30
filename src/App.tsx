@@ -8,16 +8,16 @@ import { CategoryPage, HomePage } from './pages';
 import { CategoriesStore } from './stores';
 
 export const App: FC = observer(() => {
-    const categories = useInject(CategoriesStore).categories;
+    const categories = useInject(CategoriesStore).mainCategories;
 
     return (
         <main>
             <LeftSideBar />
             <Route exact path='/' component={HomePage} />
-            {categories.map(({ alias, name }) => {
+            {categories.map(({ alias, id }) => {
                 return (
                     // eslint-disable-next-line react/jsx-no-bind
-                    <Route key={alias} exact path={`/${alias}`} render={(props) => <CategoryPage title={name} {...props} />} />
+                    <Route key={alias} exact path={`/${alias}`} render={(props) => <CategoryPage categoryId={id} {...props} />} />
                 );
             }) }
         </main>

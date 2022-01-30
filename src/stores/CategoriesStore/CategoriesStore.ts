@@ -30,13 +30,22 @@ export class CategoriesStore {
     }
 
     @computed
-    public get categories(): ReadonlyArray<Category> {
-        return Array.from(this._categories.values()).filter(x => !x.parentId);
+    private get categories(): ReadonlyArray<Category> {
+        return Array.from(this._categories.values());
+    }
+
+    @computed
+    public get mainCategories(): ReadonlyArray<Category> {
+        return this.categories.filter(x => !x.parentId);
     }
 
     public getCategory(id: CategoryId): Category {
         const category = this._categories.get(id);
         if (!category) throw new Error(`Category with id: ${id} does not exist!`);
         return category;
+    }
+
+    public getChilds(id: CategoryId): Category[] {
+        return this.categories.filter(x => x.parentId === id);
     }
 }

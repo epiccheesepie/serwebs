@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import { injectable } from 'inversify';
 import { computed, makeObservable, observable } from 'mobx';
-// eslint-disable-next-line import/no-unresolved
+import { CategoryId } from 'src/models/Category';
 import { IService, Service, ServiceId } from 'src/models/Service';
 
 import { ServicesApi } from './ServicesApi';
@@ -32,5 +33,11 @@ export class ServicesStore {
     @computed
     public get services(): ReadonlyArray<Service> {
         return Array.from(this._services.values());
+    }
+
+    public getServices(ids: CategoryId[]): Service[] {
+        return this.services.filter(x => {
+            return ids.every(id => x.tags.includes(id));
+        });
     }
 }

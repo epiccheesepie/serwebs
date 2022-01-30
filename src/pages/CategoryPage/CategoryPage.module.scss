@@ -1,0 +1,18 @@
+@import '../../global.scss';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.category {
+    margin-bottom: 14px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--services-gap);
+    padding-bottom: 30px;
+}

@@ -21,7 +21,7 @@ export const Layout: FC = observer(() => {
                 logo={service.logo}
                 background={service.background}
                 src={service.src}
-                tags={viewModel.getTagsForService(service.tags)}
+                tags={viewModel.getCategoriesForService(service.tags)}
                 recommendation={service.recommendation}
                 gold={service.gold}
               />

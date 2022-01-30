@@ -17,7 +17,7 @@ export class LayoutViewModel {
         return this.servicesStore.services;
     }
 
-    public getTagsForService(categoryIds: CategoryId[]): Category[] {
+    public getCategoriesForService(categoryIds: CategoryId[]): Category[] {
         return categoryIds.map(id => this.categoriesStore.getCategory(id));
     }
 }

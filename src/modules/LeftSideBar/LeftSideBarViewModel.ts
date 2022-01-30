@@ -16,7 +16,7 @@ export class LeftSideBarViewModel {
 
     @computed
     public get tags(): ReadonlyArray<Category> {
-        return this.categoriesStore.categories;
+        return this.categoriesStore.mainCategories;
     }
 
     public getCount(id: CategoryId): number {
