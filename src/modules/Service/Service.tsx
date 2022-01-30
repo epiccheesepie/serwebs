@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { FC } from 'react';
 
+import { Tag } from '../../models';
 import css from './Service.module.scss';
 
 interface Props {
@@ -9,10 +10,11 @@ interface Props {
     src: string;
     recommendation: boolean;
     common: boolean;
+    tags: Tag[];
 }
 
 export const Service: FC<Props> = (props) => {
-    const { logoImgSrc, background, recommendation, common } = props;
+    const { logoImgSrc, background, tags, recommendation, common } = props;
 
     return (
         <div className={css.wrapper} style={{ background }}>
@@ -30,15 +32,13 @@ export const Service: FC<Props> = (props) => {
                                 <span>Gold</span>
                             </div>
                         )}
-                        <div className={css.tag}>
-                            <span>Разработчику</span>
-                        </div>
-                        <div className={css.tag}>
-                            <span>Онлайн кинотеатр</span>
-                        </div>
-                        <div className={css.tag}>
-                            <span>Онлайн кинотеатр</span>
-                        </div>
+                        {tags.map(tag => {
+                            return (
+                            <div key={tag.id} className={css.tag}>
+                                <span>{tag.name}</span>
+                            </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

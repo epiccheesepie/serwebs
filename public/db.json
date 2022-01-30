@@ -5,7 +5,7 @@
       "logo": "http://localhost:3000/white.png",
       "background": "rgb(255, 113, 57)",
       "src": "http://youcanchoose.ru",
-      "tags": [],
+      "tags": [1,2],
       "recommendations": [true]
     },
     {
@@ -14,7 +14,7 @@
       "logo": "http://localhost:3000/white.png",
       "background": "#0060DF",
       "src": "http://youcanchoose.ru",
-      "tags": [],
+      "tags": [3],
       "recommendations": []
     },
     {
@@ -23,7 +23,7 @@
       "logo": "http://localhost:3000/white.png",
       "background": "#00b104",
       "src": "http://youcanchoose.ru",
-      "tags": [],
+      "tags": [1],
       "recommendations": [true, true]
     },
     {
@@ -32,7 +32,7 @@
       "logo": "http://localhost:3000/white.png",
       "background": "rgb(255, 113, 57)",
       "src": "http://youcanchoose.ru",
-      "tags": [],
+      "tags": [1,2,3],
       "recommendations": []
     }
 ]

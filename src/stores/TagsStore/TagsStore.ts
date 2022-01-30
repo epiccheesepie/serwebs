@@ -33,4 +33,10 @@ export class TagsStore {
     public get tags(): ReadonlyArray<Tag> {
         return Array.from(this._tags.values());
     }
+
+    public getTag(id: TagId): Tag {
+        const tag = this._tags.get(id);
+        if (!tag) throw new Error(`Tag with id: ${id} does not exist!`);
+        return tag;
+    }
 }
