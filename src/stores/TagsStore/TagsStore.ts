@@ -31,7 +31,7 @@ export class TagsStore {
 
     @computed
     public get tags(): ReadonlyArray<Tag> {
-        return Array.from(this._tags.values());
+        return Array.from(this._tags.values()).filter(x => !x.parentId);
     }
 
     public getTag(id: TagId): Tag {

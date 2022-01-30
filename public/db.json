@@ -5,8 +5,8 @@
       "logo": "http://localhost:3000/white.png",
       "background": "rgb(255, 113, 57)",
       "src": "http://youcanchoose.ru",
-      "tags": [1,2],
-      "recommendations": [true]
+      "tags": [1,2,4],
+      "recommendations": [true, true]
     },
     {
       "id": 2,

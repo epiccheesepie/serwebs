@@ -18,7 +18,9 @@ export class Tag {
     }
 
     public get iconType(): number {
-        return this.dto.iconType;
+        const iconType = this.dto.iconType;
+        if (!iconType) throw new Error('It is child tag!');
+        return iconType;
     }
 
     public get count(): number {

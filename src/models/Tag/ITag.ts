@@ -8,6 +8,6 @@ export interface ITag {
     alias: string;
     parentId?: TagId;
     name: string;
-    iconType: IconType;
+    iconType?: IconType;
     count: number;
 }
