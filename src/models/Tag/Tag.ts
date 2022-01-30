@@ -17,8 +17,8 @@ export class Tag {
         return this.dto.parentId;
     }
 
-    public get icon(): string {
-        return this.icon;
+    public get iconType(): number {
+        return this.dto.iconType;
     }
 
     public get count(): number {

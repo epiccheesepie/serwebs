@@ -23,6 +23,7 @@ export const LeftSideBar: FC = observer(() => {
                             title={item.name}
                             count={viewModel.getCount(item.id)}
                             alias={item.alias}
+                            iconType={item.iconType}
                         />
                     ))}
                 </div>

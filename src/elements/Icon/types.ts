@@ -4,9 +4,9 @@ import Graphics from './icons/Graphics.svg';
 import Internet from './icons/Internet.svg';
 
 export enum IconType {
-    INTERNET = 'INTERNET',
-    GRAPHICS = 'GRAPHICS',
-    DEVELOPER = 'DEVELOPER'
+    INTERNET = 1,
+    GRAPHICS,
+    DEVELOPER
 }
 
 export const iconTypeToSvg: Record<IconType, string> = {

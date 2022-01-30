@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-unresolved
+import { IconType } from 'src/elements/Icon/types';
+
 import { TagId } from './TagId';
 
 export interface ITag {
@@ -5,6 +8,6 @@ export interface ITag {
     alias: string;
     parentId?: TagId;
     name: string;
-    icon: string;
+    iconType: IconType;
     count: number;
 }
