@@ -13,10 +13,7 @@ export const Layout: FC = observer(() => {
 
     return (
         <Core>
-          <Search
-            onChange={viewModel.setSearchQuery}
-            value={viewModel.searchQuery}
-          />
+          <Search />
           <div className={css.wrapper}>
             {viewModel.filteredServices.map((service) => (
               <Service

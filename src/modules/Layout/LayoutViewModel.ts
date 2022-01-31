@@ -1,29 +1,18 @@
 import { injectable } from 'inversify';
-import { action, computed, makeObservable, observable } from 'mobx';
+import { computed } from 'mobx';
 
 import { Category, CategoryId, Service } from '../../models';
 import { CategoriesStore, ServicesStore } from '../../stores';
+import { SearchViewModel } from '../Search';
 
 @injectable()
 export class LayoutViewModel {
-    @observable
-    private _searchQuery = '';
-
+    // eslint-disable-next-line no-useless-constructor
     public constructor(
         private readonly servicesStore: ServicesStore,
-        private readonly categoriesStore: CategoriesStore
+        private readonly categoriesStore: CategoriesStore,
+        private readonly searchModule: SearchViewModel
     ) {
-        makeObservable(this);
-    }
-
-    @computed
-    public get searchIsActive(): boolean {
-        return this.searchQuery.trim().length > 2;
-    }
-
-    @computed
-    public get searchQuery(): string {
-        return this._searchQuery;
     }
 
     @computed
@@ -33,9 +22,9 @@ export class LayoutViewModel {
 
     @computed
     public get filteredServices(): ReadonlyArray<Service> {
-        if (!this.searchIsActive) return this.services;
+        if (!this.searchModule.searchIsActive) return this.services;
 
-        const words = this.searchQuery.toLowerCase().trim().split(' ');
+        const words = this.searchModule.searchQuery.toLowerCase().trim().split(' ');
 
         const servicesByName = this.services.filter(service => {
             return words.every(word => service.title.toLowerCase().indexOf(word, 0) >= 0);
@@ -53,11 +42,6 @@ export class LayoutViewModel {
         else if (servicesByName.length && servicesByCategory.length) return Array.from(new Set([...servicesByName, ...servicesByCategory]));
 
         return [];
-    }
-
-    @action
-    public setSearchQuery = (query: string): void => {
-        this._searchQuery = query;
     }
 
     public getCategoriesForService(categoryIds: CategoryId[]): Category[] {

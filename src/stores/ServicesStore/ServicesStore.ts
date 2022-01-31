@@ -35,9 +35,9 @@ export class ServicesStore {
         return Array.from(this._services.values());
     }
 
-    public getServices(ids: CategoryId[]): Service[] {
+    public getServices(id: CategoryId): Service[] {
         return this.services.filter(x => {
-            return ids.every(id => x.tags.includes(id));
+            return x.tags.includes(id);
         });
     }
 }
