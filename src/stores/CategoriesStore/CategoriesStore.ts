@@ -30,7 +30,7 @@ export class CategoriesStore {
     }
 
     @computed
-    private get categories(): ReadonlyArray<Category> {
+    public get categories(): ReadonlyArray<Category> {
         return Array.from(this._categories.values());
     }
 

@@ -1,6 +1,6 @@
 import { Module } from '../di';
-import { ServicesApi, ServicesStore } from './ServicesStore';
 import { CategoriesApi, CategoriesStore } from './CategoriesStore';
+import { ServicesApi, ServicesStore } from './ServicesStore';
 
 export const storesModule = Module.create('storesModule').register(ctx => {
     ctx

@@ -7,8 +7,8 @@
     },
     {
       "id": 2,
-      "name": "Графика",
-      "alias": "graphics",
+      "name": "Общение",
+      "alias": "develop",
       "iconType": 2
     },
     {
@@ -27,6 +27,12 @@
       "id": 5,
       "parentId": 3,
       "name": "Кинопортал",
+      "iconType": 3
+    },
+    {
+      "id": 6,
+      "parentId": 2,
+      "name": "Социальная сеть",
       "iconType": 3
     }
 ]
