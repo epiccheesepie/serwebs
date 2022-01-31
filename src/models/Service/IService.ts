@@ -9,4 +9,5 @@ export interface IService {
     logo: string;
     src: string;
     recommendations: boolean[];
+    names: string[];
 }

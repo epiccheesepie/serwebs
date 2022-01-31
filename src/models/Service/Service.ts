@@ -40,4 +40,8 @@ export class Service {
     public get logo(): string {
         return this.dto.logo;
     }
+
+    public get names(): string[] {
+        return this.dto.names;
+    }
 }

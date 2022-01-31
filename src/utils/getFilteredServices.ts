@@ -4,7 +4,7 @@ import { Category, Service } from 'src/models';
 export const getFilteredServices = (query: string, categories: ReadonlyArray<Category>, services: ReadonlyArray<Service>): Service[] => {
     const words = query.toLowerCase().trim().split(' ');
     const servicesByName = services.filter(service => {
-        return words.every(word => service.title.toLowerCase().indexOf(word, 0) >= 0);
+        return words.every(word => service.names.some(x => x.toLowerCase().indexOf(word, 0) >= 0))
     });
 
     const queryCategoryIds = categories.filter(category => {
