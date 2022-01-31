@@ -4,6 +4,8 @@ import { Category, CategoryId, Service } from 'src/models';
 import { SearchViewModel } from 'src/modules/Search';
 import { CategoriesStore, ServicesStore } from 'src/stores';
 
+import { getFilteredServices } from '../../utils';
+
 interface ChildServices {
     categoryName: string;
     categoryId: CategoryId;
@@ -20,28 +22,16 @@ export class CategoryPageViewModel {
     ) {
     }
 
-    private getFilteredServices(id: CategoryId): Service[] {
+    private getServices(id: CategoryId): Service[] {
         const services = this.servicesStore.getServices(id);
 
         if (!this.searchModule.searchIsActive) return services;
 
-        const words = this.searchModule.searchQuery.toLowerCase().trim().split(' ');
-        const servicesByName = services.filter(service => {
-            return words.every(word => service.title.toLowerCase().indexOf(word, 0) >= 0);
-        });
-
-        const queryCategoryIds = this.categoriesStore.categories.filter(category => {
-            return words.every(word => category.name.toLowerCase().indexOf(word) >= 0);
-        }).map(x => x.id);
-        const servicesByCategory = services.filter(service => {
-            return queryCategoryIds.some(id => service.tags.includes(id));
-        });
-
-        if (servicesByName.length && !servicesByCategory.length) return servicesByName;
-        else if (!servicesByName.length && servicesByCategory.length) return servicesByCategory;
-        else if (servicesByName.length && servicesByCategory.length) return Array.from(new Set([...servicesByName, ...servicesByCategory]));
-
-        return [];
+        return getFilteredServices(
+            this.searchModule.searchQuery,
+            this.categoriesStore.categories,
+            this.servicesStore.services
+        );
     }
 
     public getTree(id: CategoryId): ChildServices[] {
@@ -52,7 +42,7 @@ export class CategoryPageViewModel {
             return [{
                 categoryName: category.name,
                 categoryId: id,
-                services: this.getFilteredServices(id)
+                services: this.getServices(id)
             }]
         }
 
@@ -60,7 +50,7 @@ export class CategoryPageViewModel {
             return {
                 categoryName: child.name,
                 categoryId: child.id,
-                services: this.getFilteredServices(child.id)
+                services: this.getServices(child.id)
             };
         })
     }

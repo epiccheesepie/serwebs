@@ -3,6 +3,7 @@ import { computed } from 'mobx';
 
 import { Category, CategoryId, Service } from '../../models';
 import { CategoriesStore, ServicesStore } from '../../stores';
+import { getFilteredServices } from '../../utils';
 import { SearchViewModel } from '../Search';
 
 @injectable()
@@ -16,32 +17,14 @@ export class LayoutViewModel {
     }
 
     @computed
-    private get services(): ReadonlyArray<Service> {
-        return this.servicesStore.services;
-    }
+    public get services(): ReadonlyArray<Service> {
+        if (!this.searchModule.searchIsActive) return this.servicesStore.services;
 
-    @computed
-    public get filteredServices(): ReadonlyArray<Service> {
-        if (!this.searchModule.searchIsActive) return this.services;
-
-        const words = this.searchModule.searchQuery.toLowerCase().trim().split(' ');
-
-        const servicesByName = this.services.filter(service => {
-            return words.every(word => service.title.toLowerCase().indexOf(word, 0) >= 0);
-        });
-
-        const queryCategoryIds = this.categoriesStore.categories.filter(category => {
-            return words.every(word => category.name.toLowerCase().indexOf(word) >= 0);
-        }).map(x => x.id);
-        const servicesByCategory = this.servicesStore.services.filter(service => {
-            return queryCategoryIds.some(id => service.tags.includes(id));
-        });
-
-        if (servicesByName.length && !servicesByCategory.length) return servicesByName;
-        else if (!servicesByName.length && servicesByCategory.length) return servicesByCategory;
-        else if (servicesByName.length && servicesByCategory.length) return Array.from(new Set([...servicesByName, ...servicesByCategory]));
-
-        return [];
+        return getFilteredServices(
+            this.searchModule.searchQuery,
+            this.categoriesStore.categories,
+            this.servicesStore.services
+        );
     }
 
     public getCategoriesForService(categoryIds: CategoryId[]): Category[] {

@@ -15,7 +15,7 @@ export const Layout: FC = observer(() => {
         <Core>
           <Search />
           <div className={css.wrapper}>
-            {viewModel.filteredServices.map((service) => (
+            {viewModel.services.map((service) => (
               <Service
                 key={service.id}
                 logo={service.logo}
