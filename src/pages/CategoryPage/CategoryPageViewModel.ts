@@ -20,6 +20,16 @@ export class CategoryPageViewModel {
 
     public getTree(id: CategoryId): ChildServices[] {
         const childs = this.categoriesStore.getChilds(id);
+
+        if (!childs.length) {
+            const category = this.categoriesStore.getCategory(id);
+            return [{
+                categoryName: category.name,
+                categoryId: id,
+                services: this.servicesStore.getServices([id])
+            }]
+        }
+
         return childs.map(child => {
             const services = this.servicesStore.getServices([id, child.id]);
             return {
