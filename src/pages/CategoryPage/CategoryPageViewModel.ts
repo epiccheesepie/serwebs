@@ -31,7 +31,7 @@ export class CategoryPageViewModel {
 
         return getFilteredServices(
             this.searchModule.searchQuery,
-            this.categoriesStore.categories,
+            [this.categoriesStore.getCategory(id)],
             this.servicesStore.services
         );
     }
