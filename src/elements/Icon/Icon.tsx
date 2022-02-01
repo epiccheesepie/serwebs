@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-import css from './Icon.module.scss';
 import { IconType, iconTypeToSvg } from './types';
 
 interface Props {
@@ -15,9 +14,7 @@ export const Icon: FC<Props> & {
     const srcSvg = iconTypeToSvg[type];
 
     return (
-        <div className={css.icon}>
-            <img src={srcSvg} alt="icon" />
-        </div>
+        <img src={srcSvg} alt="icon" />
     );
 }
 

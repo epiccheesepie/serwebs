@@ -18,9 +18,11 @@ export const LeftSideBarItem: FC<Props> = (props) => {
 
     return (
         <Link to={`/${alias}`} key={count} className={css.item}>
-            <Icon
-                type={iconType}
-            />
+            <div className={css.icon}>
+                <Icon
+                    type={iconType}
+                />
+            </div>
             <span className={css.title}>{title}</span>
             <span className={css.count}>{count}</span>
         </Link>

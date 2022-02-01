@@ -22,20 +22,23 @@ export const Layout: FC = observer(() => {
               <Scrollable>
                 {viewModel.categories.map(category => (
                   <Link key={category.id} to={`/${category.alias}`} className={css.category}>
-                    <Icon type={category.iconType} />
+                    <div className={css.categoryIcon}>
+                      <Icon type={category.iconType} />
+                    </div>
                     <div className={css.categoryName}>
                       {category.name}
                     </div>
                   </Link>
                 ))}
                 {viewModel.categories.map(category => (
-                  <div key={category.id} className={css.category}>{category.name}</div>
-                ))}
-                {viewModel.categories.map(category => (
-                  <div key={category.id} className={css.category}>{category.name}</div>
-                ))}
-                {viewModel.categories.map(category => (
-                  <div key={category.id} className={css.category}>{category.name}</div>
+                  <Link key={category.id} to={`/${category.alias}`} className={css.category}>
+                    <div className={css.categoryIcon}>
+                      <Icon type={category.iconType} />
+                    </div>
+                    <div className={css.categoryName}>
+                      {category.name}
+                    </div>
+                  </Link>
                 ))}
               </Scrollable>
             </div>

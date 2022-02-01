@@ -14,14 +14,24 @@
     align-items: center;
     text-decoration: none;
 
-    padding: 10px 12px;
+    padding: 10px 14px;
     border-radius: 10px;
     margin: 0 3px;
 
-    background-color: rgba($body-font, 0.1);
+    background-color: rgba($white-text, 1);
 
     &:first-child {
         margin-left: 12px;
+    }
+
+    &Icon {
+        display: flex;
+        margin-right: 10px;
+
+        & img {
+            height: 16px;
+            width: auto;
+        }
     }
 
     &Name {
@@ -29,7 +39,7 @@
         align-items: center;
 
         font-size: 0.875rem;
-        color: $white-text;
+        color: $body;
         line-height: 1;
         font-weight: 400;
     }
