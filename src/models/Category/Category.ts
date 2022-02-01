@@ -1,5 +1,5 @@
-import { ICategory } from './ICategory';
 import { CategoryId } from './CategoryId';
+import { ICategory } from './ICategory';
 
 export class Category {
     // eslint-disable-next-line no-useless-constructor
@@ -33,5 +33,9 @@ export class Category {
 
     public get alias(): string {
         return this.dto.alias;
+    }
+
+    public get priority(): number {
+        return this.dto.priority;
     }
 }

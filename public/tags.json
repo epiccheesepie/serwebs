@@ -3,36 +3,42 @@
       "id": 1,
       "name": "Интернет",
       "alias": "internet",
-      "iconType": 1
+      "iconType": 1,
+      "priority": 10000
     },
     {
       "id": 2,
       "name": "Общение",
       "alias": "develop",
-      "iconType": 2
+      "iconType": 2,
+      "priority": 10000
     },
     {
       "id": 3,
       "name": "Кино",
       "alias": "movie",
-      "iconType": 3
+      "iconType": 3,
+      "priority": 10000
     },
     {
       "id": 4,
       "parentId": 3,
       "name": "Онлайн кинотеатр",
-      "iconType": 3
+      "iconType": 3,
+      "priority": 5000
     },
     {
       "id": 5,
       "parentId": 3,
       "name": "Кинопортал",
-      "iconType": 3
+      "iconType": 3,
+      "priority": 5000
     },
     {
       "id": 6,
       "parentId": 2,
       "name": "Социальная сеть",
-      "iconType": 3
+      "iconType": 3,
+      "priority": 5000
     }
 ]

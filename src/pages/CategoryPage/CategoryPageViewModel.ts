@@ -58,13 +58,15 @@ export class CategoryPageViewModel {
     }
 
     public getCategoriesForService(categoryIds: CategoryId[]): Category[] {
-        const categories = categoryIds.map(id => this.categoriesStore.getCategory(id));
-        if (!this.appModule.isMobile) {
-            return categories;
-        } else {
-            const mainCategory = categories.find(x => !x.parentId);
-            if (!mainCategory) throw new Error('Category must be defined!');
-            return [mainCategory];
-        }
+        const categories = categoryIds
+        .map(id => this.categoriesStore.getCategory(id))
+        .sort(sortCategories);
+      return this.appModule.isMobile
+        ? categories.slice(0, 1)
+        : categories;
     }
+}
+
+function sortCategories(a: Category, b: Category) {
+    return b.priority - a.priority;
 }

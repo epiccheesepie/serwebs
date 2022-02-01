@@ -31,7 +31,7 @@ export class CategoriesStore {
 
     @computed
     public get categories(): ReadonlyArray<Category> {
-        return Array.from(this._categories.values());
+        return Array.from(this._categories.values()).sort(sortCategories);
     }
 
     @computed
@@ -48,4 +48,8 @@ export class CategoriesStore {
     public getChilds(id: CategoryId): Category[] {
         return this.categories.filter(x => x.parentId === id);
     }
+}
+
+function sortCategories(a: Category, b: Category) {
+    return b.priority - a.priority;
 }

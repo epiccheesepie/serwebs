@@ -10,4 +10,5 @@ export interface ICategory {
     name: string;
     iconType?: IconType;
     count: number;
+    priority: number;
 }
