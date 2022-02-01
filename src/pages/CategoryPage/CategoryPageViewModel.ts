@@ -4,6 +4,7 @@ import { Category, CategoryId, Service } from 'src/models';
 import { SearchViewModel } from 'src/modules/Search';
 import { CategoriesStore, ServicesStore } from 'src/stores';
 
+import { AppViewModel } from '../../AppViewModel';
 import { getFilteredServices } from '../../utils';
 
 interface ChildServices {
@@ -18,7 +19,8 @@ export class CategoryPageViewModel {
     public constructor(
         private readonly servicesStore: ServicesStore,
         private readonly categoriesStore: CategoriesStore,
-        private readonly searchModule: SearchViewModel
+        private readonly searchModule: SearchViewModel,
+        private readonly appModule: AppViewModel
     ) {
     }
 
@@ -56,6 +58,13 @@ export class CategoryPageViewModel {
     }
 
     public getCategoriesForService(categoryIds: CategoryId[]): Category[] {
-        return categoryIds.map(id => this.categoriesStore.getCategory(id));
+        const categories = categoryIds.map(id => this.categoriesStore.getCategory(id));
+        if (!this.appModule.isMobile) {
+            return categories;
+        } else {
+            const mainCategory = categories.find(x => !x.parentId);
+            if (!mainCategory) throw new Error('Category must be defined!');
+            return [mainCategory];
+        }
     }
 }

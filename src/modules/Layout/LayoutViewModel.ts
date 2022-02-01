@@ -1,6 +1,7 @@
 import { injectable } from 'inversify';
 import { computed } from 'mobx';
 
+import { AppViewModel } from '../../AppViewModel';
 import { Category, CategoryId, Service } from '../../models';
 import { CategoriesStore, ServicesStore } from '../../stores';
 import { getFilteredServices } from '../../utils';
@@ -12,7 +13,8 @@ export class LayoutViewModel {
     public constructor(
         private readonly servicesStore: ServicesStore,
         private readonly categoriesStore: CategoriesStore,
-        private readonly searchModule: SearchViewModel
+        private readonly searchModule: SearchViewModel,
+        private readonly appModule: AppViewModel
     ) {
     }
 
@@ -28,6 +30,13 @@ export class LayoutViewModel {
     }
 
     public getCategoriesForService(categoryIds: CategoryId[]): Category[] {
-        return categoryIds.map(id => this.categoriesStore.getCategory(id));
+        const categories = categoryIds.map(id => this.categoriesStore.getCategory(id));
+        if (!this.appModule.isMobile) {
+            return categories;
+        } else {
+            const mainCategory = categories.find(x => !x.parentId);
+            if (!mainCategory) throw new Error('Category must be defined!');
+            return [mainCategory];
+        }
     }
 }
