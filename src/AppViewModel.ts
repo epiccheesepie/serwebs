@@ -31,7 +31,7 @@ export class AppViewModel {
     @action
     public updateDimensions = (): void => {
         const width = window.innerWidth;
-        if (width < 960) {
+        if (width < 640) {
             this._isMobile = true;
         } else {
             this._isMobile = false;

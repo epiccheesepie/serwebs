@@ -1,0 +1,16 @@
+@import '../../global.scss';
+
+.tag {
+    background: rgba($white, 0.2);
+    border-radius: 4px;
+    padding: 7px 16px;
+    line-height: 1;
+
+    & span {
+        font-size: 0.875rem;
+        color: $white-text;
+        font-weight: 300;
+        text-shadow: $service-shadow;
+        line-height: 0;
+    }
+}

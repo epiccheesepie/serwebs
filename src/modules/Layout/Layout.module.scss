@@ -9,6 +9,40 @@
     padding-bottom: 30px;
 }
 
+.category {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin: 0 3px;
+
+    background-color: rgba($body-font, 0.1);
+
+    &:first-child {
+        margin-left: 12px;
+    }
+
+    &Name {
+        display: flex;
+        align-items: center;
+
+        font-size: 0.875rem;
+        color: $white-text;
+        line-height: 1;
+        font-weight: 400;
+    }
+}
+
+.navigation {
+    margin-top: 16px;
+    margin-right: -12px;
+    margin-left: -12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba($body-font, 0.15);
+}
+
 @media (max-width: $desktop) {
     body {
         --services-gap: 22px;
