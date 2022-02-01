@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { Category } from '../../models';
-import { Tag } from '../Tag';
 import css from './Service.module.scss';
+import { Tag } from './Tag';
 
 interface Props {
     logo: string;

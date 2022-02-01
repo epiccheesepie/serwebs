@@ -1,12 +1,8 @@
-@import '../../../global.scss';
+@import '../../global.scss';
 
 .core {
     margin-left: var(--left-side-bar-width);
     padding: 20px 36px;
-}
-
-.mobile {
-    margin-left: 0;
 }
 
 @media (max-width: $desktop) {
@@ -35,12 +31,7 @@
 
 @media (max-width: $mobile-l) {
     .core {
-        padding: 14px 12px;
-    }
-}
-
-@media (max-width: $mobile-m) {
-    .core {
-        padding: 12px 12px;
+        padding: 0;
+        margin-left: 0;
     }
 }

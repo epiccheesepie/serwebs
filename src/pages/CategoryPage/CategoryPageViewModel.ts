@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { injectable } from 'inversify';
+import { computed } from 'mobx';
 import { Category, CategoryId, Service } from 'src/models';
 import { SearchViewModel } from 'src/modules/Search';
 import { CategoriesStore, ServicesStore } from 'src/stores';
@@ -22,6 +23,11 @@ export class CategoryPageViewModel {
         private readonly searchModule: SearchViewModel,
         private readonly appModule: AppViewModel
     ) {
+    }
+
+    @computed
+    public get isMobile(): boolean {
+        return this.appModule.isMobile;
     }
 
     private getServices(id: CategoryId): Service[] {
@@ -61,7 +67,7 @@ export class CategoryPageViewModel {
         const categories = categoryIds
         .map(id => this.categoriesStore.getCategory(id))
         .sort(sortCategories);
-      return this.appModule.isMobile
+      return this.isMobile
         ? categories.slice(0, 1)
         : categories;
     }

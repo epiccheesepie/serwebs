@@ -1,13 +1,9 @@
 import { observer } from 'mobx-react';
 import { FC } from 'react';
-// eslint-disable-next-line import/no-unresolved
-import { Search } from 'src/modules/Search';
 
 import { useInject } from '../../hooks';
 import { CategoryId } from '../../models';
-import { Service } from '../../modules';
-// eslint-disable-next-line import/no-internal-modules
-import { Core } from '../../modules/Layout';
+import { Core, Service } from '../../modules';
 import css from './CategoryPage.module.scss';
 import { CategoryPageViewModel } from './CategoryPageViewModel';
 
@@ -23,7 +19,6 @@ export const CategoryPage: FC<Props> = observer((props) => {
 
     return (
         <Core>
-          <Search />
           <div className={css.wrapper}>
             {tree.map(child => {
               return (

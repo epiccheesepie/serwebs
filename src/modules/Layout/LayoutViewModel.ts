@@ -34,16 +34,11 @@ export class LayoutViewModel {
         return this.categoriesStore.mainCategories;
     }
 
-    @computed
-    public get isMobile(): boolean {
-        return this.appModule.isMobile;
-    }
-
     public getCategoriesForService(categoryIds: CategoryId[]): Category[] {
         const categories = categoryIds
           .map(id => this.categoriesStore.getCategory(id))
           .sort(sortCategories);
-        return this.isMobile
+        return this.appModule.isMobile
           ? categories.slice(0, 1)
           : categories;
     }

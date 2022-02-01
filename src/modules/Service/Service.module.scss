@@ -56,7 +56,7 @@
 }
 
 .tagGreen {
-    background: rgba($green, 0.9);
+    background: rgba($green, 0.9) !important;
 
     & span {
         font-weight: 600;
@@ -64,7 +64,7 @@
 }
 
 .tagGold {
-    background: rgba($gold, 0.9);
+    background: rgba($gold, 0.9) !important;
 
     & span {
         font-weight: 600;
@@ -111,6 +111,7 @@
 
     .black {
         opacity: 1;
+        background: rgba($black, 0.28);
     }
 }
 

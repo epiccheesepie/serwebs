@@ -1,0 +1,54 @@
+@import '../../global.scss';
+
+.navigation {
+    margin-top: 16px;
+    margin-right: -12px;
+    margin-left: -12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba($body-font, 0.15);
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin: 0 3px;
+
+    background-color: $white-text;
+
+    &:first-child {
+        margin-left: 12px;
+    }
+
+    &Icon {
+        display: flex;
+        margin-right: 10px;
+
+        & img {
+            height: 16px;
+            width: auto;
+        }
+    }
+
+    &Name {
+        display: flex;
+        align-items: center;
+
+        white-space: nowrap;
+        font-size: 0.875rem;
+        color: $body;
+        line-height: 1;
+        font-weight: 400;
+    }
+}
+
+.gold {
+    background-color: $green;
+
+    .categoryName {
+        color: $white-text;
+    }
+}

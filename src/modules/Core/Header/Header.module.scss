@@ -1,0 +1,11 @@
+@import '../../../global.scss';
+
+@media (max-width: $mobile-l) {
+    .header {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        background: $body;
+        padding: 14px 12px 0 12px;
+    }
+}
