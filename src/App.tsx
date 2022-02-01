@@ -2,19 +2,19 @@ import { observer } from 'mobx-react';
 import { FC } from 'react'
 import { Route } from 'react-router-dom';
 
+import { AppViewModel } from './AppViewModel';
 import { useInject } from './hooks';
 import { LeftSideBar } from './modules';
 import { CategoryPage, HomePage } from './pages';
-import { CategoriesStore } from './stores';
 
 export const App: FC = observer(() => {
-    const categories = useInject(CategoriesStore).mainCategories;
+    const viewModel = useInject(AppViewModel);
 
     return (
         <main>
-            <LeftSideBar />
+            {!viewModel.isMobile && <LeftSideBar />}
             <Route exact path='/' component={HomePage} />
-            {categories.map(({ alias, id }) => {
+            {viewModel.categories.map(({ alias, id }) => {
                 return (
                     // eslint-disable-next-line react/jsx-no-bind
                     <Route key={alias} exact path={`/${alias}`} render={(props) => <CategoryPage categoryId={id} {...props} />} />

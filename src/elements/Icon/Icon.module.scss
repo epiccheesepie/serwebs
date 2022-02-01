@@ -7,7 +7,6 @@
     justify-content: center;
     align-items: center;
 
-    // background-color: $orange;
     border-radius: 12px;
     border: 1px solid rgba($body-font, 0.45);
     box-shadow: $left-side-bar-icon-shadow;
@@ -16,5 +15,27 @@
         height: 20px;
         width: auto;
         filter: invert(1);
+    }
+}
+
+@media (max-width: $tablet-l) {
+    .icon {
+        height: 42px;
+        width: 42px;
+
+        & img {
+            height: 17px;
+        }
+    }
+}
+
+@media (max-width: $tablet-m) {
+    .icon {
+        height: 36px;
+        width: 36px;
+
+        & img {
+            height: 15px;
+        }
     }
 }

@@ -31,7 +31,7 @@
 
     font-family: 'SF Pro Display', sans-serif;
     color: #fff;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
 
     outline: none;
@@ -44,5 +44,22 @@
 
     &:focus {
         border: 1px solid rgb(154, 154, 154);
+    }
+}
+
+@media (max-width: $tablet-m) {
+    .search {
+        --padding-left: 50px;
+
+        height: 36px;
+        width: calc(100% - var(--padding-left));
+
+        font-size: 1rem;
+    }
+
+    .searchIcon {
+        & img {
+            width: 16px;
+        }
     }
 }

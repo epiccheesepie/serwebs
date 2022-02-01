@@ -1,8 +1,17 @@
 @import './assets/fonts.scss';
 
-// geometry
+// breakpoints
 
-$left-side-bar-width: 270px;
+  $mobile: 360px;
+  $mobile-m: 480px;
+  $mobile-l: 640px;
+  $tablet: 960px;
+  $tablet-m: 1160px;
+  $tablet-l: 1360px;
+  $desktop: 1580px;
+  $desktop-m: 1920px;
+  $desktop-l: 2560px;
+
 
 // colors
 

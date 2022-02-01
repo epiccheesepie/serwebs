@@ -7,7 +7,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    width: $left-side-bar-width;
+    width: var(--left-side-bar-width);
     height: 100%;
 
     background-color: $left-side-bar-color;
@@ -22,10 +22,30 @@
 
 .logo {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: var(--header-top-margin);
 
     & img {
         width: 100%;
         filter: drop-shadow(1px 1px 2px rgba($black, 0.15));
+    }
+}
+
+@media (max-width: $tablet-l) {
+    body {
+        --left-side-bar-width: 240px;
+    }
+
+    .content {
+        padding: 18px 16px 26px 16px;
+    }
+}
+
+@media (max-width: $tablet-m) {
+    body {
+        --left-side-bar-width: 210px;
+    }
+
+    .content {
+        padding: 16px 12px 20px 12px;
     }
 }

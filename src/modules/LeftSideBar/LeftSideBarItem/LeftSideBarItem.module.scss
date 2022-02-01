@@ -34,3 +34,19 @@
 .count {
     margin-left: auto;
 }
+
+@media (max-width: $tablet-l) {
+    .item {
+        height: 42px;
+        padding-right: 12px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: $tablet-m) {
+    .item {
+        height: 36px;
+        padding-right: 12px;
+        margin-bottom: 10px;
+    }
+}

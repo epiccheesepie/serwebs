@@ -1,6 +1,46 @@
 @import '../../../global.scss';
 
 .core {
-    margin-left: $left-side-bar-width;
-    padding: 20px 40px;
+    margin-left: var(--left-side-bar-width);
+    padding: 20px 36px;
+}
+
+.mobile {
+    margin-left: 0;
+}
+
+@media (max-width: $desktop) {
+    .core {
+        padding: 18px 34px;
+    }
+}
+
+@media (max-width: $tablet-l) {
+    .core {
+        padding: 16px 28px;
+    }
+}
+
+@media (max-width: $tablet-m) {
+    .core {
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .core {
+        padding: 14px 16px;
+    }
+}
+
+@media (max-width: $mobile-l) {
+    .core {
+        padding: 14px 14px;
+    }
+}
+
+@media (max-width: $mobile-m) {
+    .core {
+        padding: 12px 12px;
+    }
 }

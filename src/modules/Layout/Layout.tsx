@@ -26,6 +26,17 @@ export const Layout: FC = observer(() => {
                 gold={service.gold}
               />
             ))}
+            {viewModel.services.map((service) => (
+              <Service
+                key={service.id}
+                logo={service.logo}
+                background={service.background}
+                src={service.src}
+                tags={viewModel.getCategoriesForService(service.tags)}
+                recommendation={service.recommendation}
+                gold={service.gold}
+              />
+            ))}
           </div>
         </Core>
     );

@@ -5,6 +5,48 @@
     flex-wrap: wrap;
 
     gap: var(--services-gap);
-    margin-top: 30px;
+    margin-top: var(--header-top-margin);
     padding-bottom: 30px;
+}
+
+@media (max-width: $desktop) {
+    body {
+        --services-gap: 22px;
+    }
+}
+
+@media (max-width: $tablet-l) {
+    body {
+        --services-gap: 18px;
+    }
+
+    .wrapper {
+        padding-bottom: 26px;
+    }
+}
+
+@media (max-width: $tablet-m) {
+    body {
+        --services-gap: 14px;
+    }
+
+    .wrapper {
+        padding-bottom: 22px;
+    }
+}
+
+@media (max-width: $tablet) {
+    body {
+        --services-gap: 14px;
+    }
+
+    .wrapper {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: $mobile-m) {
+    body {
+        --services-gap: 12px;
+    }
 }

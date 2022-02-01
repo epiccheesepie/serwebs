@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     width: calc(100% / 3 - (var(--services-gap)/3*2));
-    height: 240px;
+    height: 234px;
     border-radius: 16px;
     transition: $timing;
     cursor: pointer;
@@ -62,7 +62,7 @@
     line-height: 1;
 
     & span {
-        font-size: 14px;
+        font-size: 0.875rem;
         color: $white-text;
         font-weight: 300;
         text-shadow: $service-shadow;
@@ -83,5 +83,71 @@
 
     & span {
         font-weight: 600;
+    }
+}
+
+@media (max-width: $desktop) {
+    .wrapper {
+        height: 210px;
+    }
+
+    .content {
+        padding: 0 36px;
+    }
+}
+
+@media (max-width: $tablet-l) {
+    .wrapper {
+        height: 170px;
+    }
+
+    .content {
+        padding: 0 32px;
+    }
+
+    .tagsWrapper {
+        margin: 0 18px 18px 18px;
+    }
+}
+
+@media (max-width: $tablet-m) {
+    .wrapper {
+        height: 150px;
+    }
+
+    .content {
+        padding: 0 28px;
+    }
+
+    .tagsWrapper {
+        margin: 0 16px 16px 16px;
+        gap: 3px;
+    }
+
+    .black {
+        opacity: 1;
+    }
+}
+
+@media (max-width: $tablet) {
+    .wrapper {
+        height: 160px;
+    }
+
+    .content {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: $mobile-l) {
+    .wrapper {
+        width: calc(100% / 2 - (var(--services-gap)/2));
+        height: 180px;
+    }
+}
+
+@media (max-width: $mobile-l) {
+    .wrapper {
+        height: 140px;
     }
 }
