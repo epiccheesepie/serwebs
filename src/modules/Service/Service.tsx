@@ -14,10 +14,11 @@ interface Props {
 }
 
 export const Service: FC<Props> = (props) => {
-    const { logo, background, tags, recommendation, gold } = props;
+    const { logo, background, tags, recommendation, gold, src } = props;
 
     return (
-        <div className={css.wrapper} style={{ background }}>
+        // eslint-disable-next-line react/jsx-no-target-blank
+        <a href={src} target="_blank" className={css.wrapper} style={{ background }}>
             <div className={css.content}>
                 <img className={css.logo} src={logo} alt='ServiceLogo' />
                 <div className={css.black}>
@@ -42,6 +43,6 @@ export const Service: FC<Props> = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     );
 }
