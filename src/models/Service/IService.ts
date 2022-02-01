@@ -10,4 +10,5 @@ export interface IService {
     src: string;
     recommendations: boolean[];
     names: string[];
+    priority: number;
 }

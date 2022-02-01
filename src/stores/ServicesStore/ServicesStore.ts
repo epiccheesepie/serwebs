@@ -32,7 +32,7 @@ export class ServicesStore {
 
     @computed
     public get services(): ReadonlyArray<Service> {
-        return Array.from(this._services.values());
+        return Array.from(this._services.values()).sort(sortServices);
     }
 
     public getServices(id: CategoryId): Service[] {
@@ -40,4 +40,8 @@ export class ServicesStore {
             return x.tags.includes(id);
         });
     }
+}
+
+function sortServices(a: Service, b: Service) {
+    return b.priority - a.priority;
 }

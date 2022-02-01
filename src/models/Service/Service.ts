@@ -44,4 +44,8 @@ export class Service {
     public get names(): string[] {
         return this.dto.names;
     }
+
+    public get priority(): number {
+        return this.dto.priority;
+    }
 }
