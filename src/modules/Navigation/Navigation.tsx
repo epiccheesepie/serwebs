@@ -13,7 +13,7 @@ export const Navigation: FC = () => {
 
     return (
       <div className={css.navigation}>
-        <Scrollable>
+        <Scrollable className={css.scrollable}>
           <Link to='/' className={clsx(css.category, css.gold)}>
             <div className={css.categoryName}>
               На главную
