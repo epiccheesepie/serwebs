@@ -14,3 +14,9 @@
         line-height: 0;
     }
 }
+
+@media (max-width: $tablet-m) {
+    .tag {
+        backdrop-filter: blur(2.25px);
+    }
+}

@@ -23,7 +23,7 @@
     margin: 0 2px;
 
     &:first-child {
-        margin-left: 12px;
+        margin-left: 6px;
     }
 
     &Icon {
@@ -86,6 +86,8 @@
 
     .category {
         --size: 58px;
+
+        margin: 0 4px;
 
         &Name {
             font-size: 0.805rem;
