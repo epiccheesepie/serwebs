@@ -12,6 +12,7 @@
 
     background-color: $left-side-bar-color;
     box-shadow: $left-side-bar-shadow;
+    border-right: 1px solid rgba($white-text, 0.05);
 }
 
 .content {
