@@ -13,17 +13,11 @@
 
 @media (max-width: $tablet-l) {
     .core {
-        padding: 16px 28px;
+        padding: 16px 26px;
     }
 }
 
 @media (max-width: $tablet-m) {
-    .core {
-        padding: 14px 20px;
-    }
-}
-
-@media (max-width: $tablet) {
     .core {
         padding: 14px 16px;
     }

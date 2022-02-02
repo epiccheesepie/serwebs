@@ -1,37 +1,42 @@
 @import '../../global.scss';
 
-.scrollable {
-    padding: 2px 0;
-}
-
 .navigation {
-    margin-top: 16px;
+    margin-top: 8px;
     margin-right: -12px;
     margin-left: -12px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 1px solid rgba($body-font, 0.15);
 }
 
 .category {
+    --size: 68px;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-decoration: none;
 
-    padding: 9px 14px;
+    padding: 4px 0;
+    min-width: var(--size);
+    max-width: var(--size);
     border-radius: 12px;
     margin: 0 2px;
-
-    border: 1px solid rgba($white-text, 0.12);
-    box-shadow: $black-stripe;
-    background-color: $left-side-bar-color;
 
     &:first-child {
         margin-left: 12px;
     }
 
     &Icon {
+        --icon-size: 42px;
+        height: var(--icon-size);
+        width: var(--icon-size);
         display: flex;
-        margin-right: 10px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 12px;
+        border: 1px solid rgba($body-font, 0.45);
+        box-shadow: $left-side-bar-icon-shadow;
 
         & img {
             height: 16px;
@@ -41,22 +46,49 @@
     }
 
     &Name {
-        display: flex;
-        align-items: center;
+        display: inline-block;
 
-        white-space: nowrap;
+        margin-top: 4px;
+        max-width: var(--size);
+
         font-size: 0.875rem;
         color: $white-text;
         line-height: 1;
         font-weight: 400;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
-.gold {
-    background-color: $white-text;
-    border: 1px solid rgba($left-side-bar-color, 1);
+.allIcon {
+    background-color: $gold;
 
-    .categoryName {
-        color: $left-side-bar-color;
+    & img {
+        filter: none;
+    }
+}
+
+@media (max-width: $mobile-l) {
+    .category {
+         &Icon {
+            --icon-size: 38px;
+        }
+    }
+}
+
+@media (max-width: $mobile-m) {
+    .navigation {
+        margin-top: 6px;
+        padding-bottom: 4px;
+    }
+
+    .category {
+        --size: 58px;
+
+        &Name {
+            font-size: 0.805rem;
+        }
     }
 }

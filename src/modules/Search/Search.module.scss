@@ -47,11 +47,17 @@
     }
 }
 
+@media (max-width: $tablet-l) {
+    .search {
+        height: 36px;
+    }
+}
+
 @media (max-width: $tablet-m) {
     .search {
         --padding-left: 50px;
 
-        height: 36px;
+        height: 34px;
         width: calc(100% - var(--padding-left));
 
         font-size: 1rem;
@@ -60,6 +66,20 @@
     .searchIcon {
         & img {
             width: 16px;
+        }
+    }
+}
+
+@media (max-width: $mobile-m) {
+    .search {
+        height: 29px;
+
+        font-size: 0.925rem;
+    }
+
+    .searchIcon {
+        & img {
+            width: 15px;
         }
     }
 }

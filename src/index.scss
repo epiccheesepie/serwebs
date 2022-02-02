@@ -40,12 +40,6 @@ main {
 @media (max-width: $tablet-m) {
     :root {
         --font-size: 14px;
-        --header-top-margin: 20px;
-    }
-}
-
-@media (max-width: $tablet) {
-    :root {
         --header-top-margin: 18px;
     }
 }

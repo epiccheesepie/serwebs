@@ -111,7 +111,8 @@
 
     .black {
         opacity: 1;
-        background: rgba($black, 0.28);
+        background: rgba($black, 0.22);
+        backdrop-filter: blur(0.5px);
     }
 }
 
@@ -139,6 +140,10 @@
 @media (max-width: $mobile-m) {
     .tagsWrapper {
         margin: 0 12px 12px 12px;
+    }
+
+    .black {
+        background: rgba($black, 0.18);
     }
 }
 
