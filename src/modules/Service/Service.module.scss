@@ -98,6 +98,10 @@
 @media (max-width: $tablet-m) {
     .wrapper {
         height: 150px;
+
+        &:hover {
+            transform: none;
+        }
     }
 
     .content {
