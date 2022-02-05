@@ -33,10 +33,6 @@
 
 .allIcon {
     background-color: $gold;
-
-    & img {
-        filter: none;
-    }
 }
 
 @media (max-width: $tablet-l) {

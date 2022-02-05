@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 
 import { AppViewModel } from './AppViewModel';
 import { useInject } from './hooks';
-import { LeftSideBar } from './modules';
+import { Core, LeftSideBar } from './modules';
 import { CategoryPage, HomePage } from './pages';
 
 export const App: FC = observer(() => {
@@ -13,13 +13,15 @@ export const App: FC = observer(() => {
     return (
         <main>
             {!viewModel.isMobile && <LeftSideBar />}
+            <Core>
             <Route exact path='/' component={HomePage} />
-            {viewModel.categories.map(({ alias, id }) => {
-                return (
-                    // eslint-disable-next-line react/jsx-no-bind
-                    <Route key={alias} exact path={`/${alias}`} render={(props) => <CategoryPage categoryId={id} {...props} />} />
-                );
-            }) }
+                {viewModel.categories.map(({ alias, id }) => {
+                    return (
+                        // eslint-disable-next-line react/jsx-no-bind
+                        <Route key={alias} exact path={`/${alias}`} render={(props) => <CategoryPage categoryId={id} {...props} />} />
+                    );
+                }) }
+            </Core>
         </main>
     )
 })
