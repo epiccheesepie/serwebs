@@ -4,7 +4,6 @@
     margin-top: 8px;
     margin-right: -12px;
     margin-left: -12px;
-    padding-bottom: 8px;
     border-bottom: 1px solid rgba($body-font, 0.15);
 }
 
@@ -16,10 +15,9 @@
     align-items: center;
     text-decoration: none;
 
-    padding: 4px 0;
+    padding: 4px 0 12px 0;
     min-width: var(--size);
     max-width: var(--size);
-    border-radius: 12px;
     margin: 0 2px;
 
     &:first-child {
@@ -62,6 +60,10 @@
     }
 }
 
+.active {
+    border-bottom: 1px solid $gold;
+}
+
 .allIcon {
     background-color: $gold;
 
@@ -81,13 +83,13 @@
 @media (max-width: $mobile-m) {
     .navigation {
         margin-top: 6px;
-        padding-bottom: 4px;
     }
 
     .category {
         --size: 58px;
 
         margin: 0 4px;
+        padding: 4px 0 8px 0;
 
         &Name {
             font-size: 0.805rem;

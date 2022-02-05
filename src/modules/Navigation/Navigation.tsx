@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import clsx from 'clsx';
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { Icon } from '../../elements';
 import { useInject } from '../../hooks';
@@ -12,26 +12,28 @@ import css from './Navigation.module.scss';
 export const Navigation: FC = () => {
     const categories = useInject(CategoriesStore).mainCategories;
 
+    const activeUrl = useLocation().pathname;
+
     return (
       <div className={css.navigation}>
         <Scrollable className={css.scrollable}>
-          <Link to='/' className={css.category}>
+          <NavLink to='/' className={clsx(css.category, { [css.active]: activeUrl === '/' })}>
             <div className={clsx(css.categoryIcon, css.allIcon)}>
               <Icon type={Icon.Type.DEVELOPER} />
             </div>
             <div className={css.categoryName}>
               Все
             </div>
-          </Link>
+          </NavLink>
           {categories.map(category => (
-            <Link key={category.id} to={`/${category.alias}`} className={css.category}>
+            <NavLink activeClassName={css.active} key={category.id} to={`/${category.alias}`} className={css.category}>
               <div className={css.categoryIcon}>
                 <Icon type={category.iconType} />
               </div>
               <div className={css.categoryName}>
                 {category.name}
               </div>
-            </Link>
+            </NavLink>
           ))}
         </Scrollable>
       </div>

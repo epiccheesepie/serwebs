@@ -9,6 +9,16 @@ import { LayoutViewModel } from './LayoutViewModel';
 export const Layout: FC = observer(() => {
   const viewModel = useInject(LayoutViewModel);
 
+    if (!viewModel.services.length) {
+      return (
+        <div className={css.wrapper}>
+          <div className={css.noServices}>
+            К сожалению, на данный момент, у меня нет сервисов по вашему запросу :(
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className={css.wrapper}>
       {viewModel.services.map((service) => (

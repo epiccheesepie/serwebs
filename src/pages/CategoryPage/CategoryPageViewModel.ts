@@ -6,7 +6,7 @@ import { SearchViewModel } from 'src/modules/Search';
 import { CategoriesStore, ServicesStore } from 'src/stores';
 
 import { AppViewModel } from '../../AppViewModel';
-import { getFilteredServices } from '../../utils';
+import { getFilteredServicesByCategory } from '../../utils';
 
 interface ChildServices {
     categoryName: string;
@@ -35,9 +35,9 @@ export class CategoryPageViewModel {
 
         if (!this.searchModule.searchIsActive) return services;
 
-        return getFilteredServices(
+        return getFilteredServicesByCategory(
             this.searchModule.searchQuery,
-            [this.categoriesStore.getCategory(id)],
+            id,
             this.servicesStore.services
         );
     }
@@ -51,7 +51,7 @@ export class CategoryPageViewModel {
                 categoryName: category.name,
                 categoryId: id,
                 services: this.getServices(id)
-            }]
+            }].filter(child => child.services.length);
         }
 
         return childs.map(child => {
@@ -60,7 +60,7 @@ export class CategoryPageViewModel {
                 categoryId: child.id,
                 services: this.getServices(child.id)
             };
-        })
+        }).filter(child => child.services.length);
     }
 
     public getCategoriesForService(categoryIds: CategoryId[]): Category[] {
