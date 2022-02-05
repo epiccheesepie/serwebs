@@ -31,6 +31,14 @@
     }
 }
 
+.allIcon {
+    background-color: $gold;
+
+    & img {
+        filter: none;
+    }
+}
+
 @media (max-width: $tablet-l) {
     body {
         --left-side-bar-width: 240px;

@@ -19,6 +19,11 @@ export class LeftSideBarViewModel {
         return this.categoriesStore.mainCategories;
     }
 
+    @computed
+    public get amount(): number {
+        return this.servicesStore.services.length;
+    }
+
     public getCount(id: CategoryId): number {
         return this.servicesStore.services.filter(service => service.tags.includes(id)).length;
     }

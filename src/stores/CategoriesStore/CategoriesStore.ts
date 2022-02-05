@@ -19,8 +19,6 @@ export class CategoriesStore {
     }
 
     private async load(): Promise<void> {
-        // eslint-disable-next-line no-debugger
-        debugger;
         const categoriesDto = await this.api.fetchCategories() as ICategory[];
         const categories = new Map<CategoryId, Category>();
         categoriesDto.forEach(dto => {

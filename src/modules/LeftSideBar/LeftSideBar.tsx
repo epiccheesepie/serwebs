@@ -1,6 +1,8 @@
 import { observer } from 'mobx-react';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
+// eslint-disable-next-line import/no-unresolved
+import { Icon } from 'src/elements';
 
 import { useInject } from '../../hooks';
 import css from './LeftSideBar.module.scss';
@@ -17,6 +19,13 @@ export const LeftSideBar: FC = observer(() => {
                     <img src="/white.png" alt="logo" />
                 </Link>
                 <div className={css.menu}>
+                    <LeftSideBarItem
+                        title="Все"
+                        count={viewModel.amount}
+                        alias=""
+                        iconType={Icon.Type.INTERNET}
+                        iconClassName={css.allIcon}
+                    />
                     {viewModel.tags.map((item, index) => (
                         <LeftSideBarItem
                             key={String(index)}

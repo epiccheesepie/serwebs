@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 // eslint-disable-next-line import/no-unresolved
@@ -10,15 +11,16 @@ interface Props {
     count: number;
     title: string;
     alias: string;
-    iconType: IconType
+    iconType: IconType;
+    iconClassName?: string;
 }
 
 export const LeftSideBarItem: FC<Props> = (props) => {
-    const { title, count, alias, iconType } = props;
+    const { title, count, alias, iconType, iconClassName } = props;
 
     return (
         <Link to={`/${alias}`} key={count} className={css.item}>
-            <div className={css.icon}>
+            <div className={clsx(css.icon, iconClassName)}>
                 <Icon
                     type={iconType}
                 />
