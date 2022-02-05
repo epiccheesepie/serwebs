@@ -50,3 +50,18 @@
         padding: 16px 12px 20px 12px;
     }
 }
+
+@media (min-width: $desktop-m) {
+    .wrapper {
+        position: relative;
+    }
+}
+
+@media (min-width: $desktop-l) {
+    .wrapper {
+        height: auto;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border-right: none;
+    }
+}

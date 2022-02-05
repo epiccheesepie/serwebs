@@ -9,7 +9,7 @@
     {
       "id": 2,
       "name": "Общение",
-      "alias": "develop",
+      "alias": "society",
       "iconType": 2,
       "priority": 10000
     },
@@ -40,5 +40,29 @@
       "name": "Социальная сеть",
       "iconType": 3,
       "priority": 5000
+    },
+    {
+      "id": 7,
+      "parentId": 0,
+      "name": "Разработчику",
+      "alias": "develop",
+      "iconType": 3,
+      "priority": 10000
+    },
+    {
+      "id": 8,
+      "parentId": 0,
+      "name": "Финансы",
+      "alias": "finance",
+      "iconType": 3,
+      "priority": 10000
+    },
+    {
+      "id": 9,
+      "parentId": 0,
+      "name": "Новости",
+      "alias": "news",
+      "iconType": 3,
+      "priority": 10000
     }
 ]

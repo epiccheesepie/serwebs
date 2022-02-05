@@ -29,3 +29,11 @@
         margin-left: 0;
     }
 }
+
+@media (min-width: $desktop-m) {
+    .core {
+        width: 1758px;
+        height: fit-content;
+        margin-left: 0;
+    }
+}

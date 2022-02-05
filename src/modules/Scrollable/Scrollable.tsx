@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { FC, useLayoutEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 
 import css from './Scrollable.module.scss';
 
@@ -12,7 +12,7 @@ export const Scrollable: FC<Props> = (props) => {
 
     const containerRef = useRef<HTMLDivElement>(null);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const container = containerRef.current;
 
         const onScroll = (e: Event) => {

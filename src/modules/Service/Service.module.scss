@@ -151,3 +151,10 @@
         height: 140px;
     }
 }
+
+@media (min-width: $desktop-m) {
+    .wrapper {
+        width: calc(100% / 4 - (var(--services-gap)/4*3));
+        height: 220px;
+    }
+}

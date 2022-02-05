@@ -56,3 +56,18 @@ main {
         --font-size: 10px;
     }
 }
+
+@media (min-width: $desktop-m) {
+    main {
+        display: flex;
+
+        width: calc(1830px + var(--left-side-bar-width));
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: $desktop-l) {
+    main {
+        height: auto;
+    }
+}

@@ -1,4 +1,4 @@
-// import clsx from 'clsx';
+/* eslint-disable react/jsx-no-bind */
 import clsx from 'clsx';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
@@ -23,26 +23,6 @@ export const Navigation: FC = () => {
               Все
             </div>
           </Link>
-          {categories.map(category => (
-            <Link key={category.id} to={`/${category.alias}`} className={css.category}>
-              <div className={css.categoryIcon}>
-                <Icon type={category.iconType} />
-              </div>
-              <div className={css.categoryName}>
-                {category.name}
-              </div>
-            </Link>
-          ))}
-                    {categories.map(category => (
-            <Link key={category.id} to={`/${category.alias}`} className={css.category}>
-              <div className={css.categoryIcon}>
-                <Icon type={category.iconType} />
-              </div>
-              <div className={css.categoryName}>
-                {category.name}
-              </div>
-            </Link>
-          ))}
           {categories.map(category => (
             <Link key={category.id} to={`/${category.alias}`} className={css.category}>
               <div className={css.categoryIcon}>
