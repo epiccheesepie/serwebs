@@ -1,9 +1,15 @@
 @import '../../../global.scss';
 
 .tag {
-    background: rgba($white, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     border-radius: 4px;
-    padding: 7px 16px;
+    padding: 0 16px;
+    height: 30px;
+
+    background: rgba($white, 0.2);
     line-height: 1;
 
     & span {

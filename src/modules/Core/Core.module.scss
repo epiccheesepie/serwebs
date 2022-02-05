@@ -32,8 +32,12 @@
 
 @media (min-width: $desktop-m) {
     .core {
-        width: 1758px;
         height: fit-content;
+    }
+}
+
+@media (min-width: $desktop-l) {
+    .core {
         margin-left: 0;
     }
 }

@@ -8,6 +8,7 @@
     left: 0;
     top: 0;
     width: var(--left-side-bar-width);
+    min-width: var(--left-side-bar-width);
     height: 100%;
 
     background-color: $left-side-bar-color;
@@ -55,14 +56,9 @@
     }
 }
 
-@media (min-width: $desktop-m) {
-    .wrapper {
-        position: relative;
-    }
-}
-
 @media (min-width: $desktop-l) {
     .wrapper {
+        position: relative;
         height: auto;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;

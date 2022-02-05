@@ -57,17 +57,26 @@ main {
     }
 }
 
-@media (min-width: $desktop-m) {
+@media (min-width: $desktop) {
     main {
-        display: flex;
+        width: auto;
+    }
+}
 
-        width: calc(1830px + var(--left-side-bar-width));
-        margin: 0 auto;
+@media (min-width: $desktop-m) {
+    :root {
+        --left-side-bar-width: 290px;
+        --font-size: 18px;
     }
 }
 
 @media (min-width: $desktop-l) {
     main {
+        display: flex;
+        flex-grow: 1;
+
+        width: calc(1720px + var(--left-side-bar-width));
         height: auto;
+        margin: 0 auto;
     }
 }
