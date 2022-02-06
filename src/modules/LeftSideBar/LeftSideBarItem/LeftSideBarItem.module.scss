@@ -1,12 +1,14 @@
 @import '../../../global.scss';
 
 .item {
+    --item-size: 42px;
+
     display: flex;
     align-items: center;
-    height: 48px;
+    height: var(--item-size);
     padding-right: 12px;
     border-radius: 12px;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -17,7 +19,6 @@
     transition: $timing;
 
     &:hover {
-    //   transform: scale(1.05);
       margin-left: 8px;
       background-color: $body;
     }
@@ -36,8 +37,8 @@
 }
 
 .icon {
-    height: 48px;
-    width: 48px;
+    height: var(--item-size);
+    width: var(--item-size);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,42 +48,38 @@
     box-shadow: $left-side-bar-icon-shadow;
 
     & img {
-        height: 20px;
+        height: 18px;
         width: auto;
         filter: invert(1);
     }
 }
 
-@media (max-width: $tablet-l) {
-    .item {
-        height: 42px;
-        padding-right: 12px;
-        margin-bottom: 12px;
-    }
-
-    .icon {
-        height: 42px;
-        width: 42px;
-
-        & img {
-            height: 17px;
-        }
-    }
-}
-
 @media (max-width: $tablet-m) {
     .item {
-        height: 36px;
+        --item-size: 36px;
+
         padding-right: 12px;
         margin-bottom: 10px;
     }
 
     .icon {
-        height: 36px;
-        width: 36px;
-
         & img {
             height: 15px;
+        }
+    }
+}
+
+@media (min-width: $desktop-m) {
+    .item {
+        --item-size: 48px;
+
+        padding-right: 12px;
+        margin-bottom: 12px;
+    }
+
+    .icon {
+        & img {
+            height: 20px;
         }
     }
 }

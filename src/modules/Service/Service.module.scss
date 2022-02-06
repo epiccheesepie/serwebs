@@ -5,8 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100% / 3 - (var(--services-gap)/3*2));
-    height: 234px;
+    width: calc(100% / 4 - (var(--services-gap)/4*3));
+    height: 188px;
     border-radius: 16px;
     transition: $timing;
     cursor: pointer;
@@ -52,7 +52,7 @@
     margin: 0 20px 20px 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 3px;
 }
 
 .tagGreen {
@@ -73,6 +73,7 @@
 
 @media (max-width: $desktop) {
     .wrapper {
+        width: calc(100% / 3 - (var(--services-gap)/3*2));
         height: 210px;
     }
 
@@ -156,5 +157,9 @@
     .wrapper {
         width: calc(100% / 4 - (var(--services-gap)/4*3));
         height: 220px;
+    }
+
+    .tagsWrapper {
+        gap: 4px;
     }
 }

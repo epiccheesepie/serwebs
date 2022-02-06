@@ -1,68 +1,100 @@
 [
-    {
-      "id": 1,
-      "name": "Интернет",
-      "alias": "internet",
-      "iconType": 1,
-      "priority": 10000
-    },
-    {
-      "id": 2,
-      "name": "Общение",
-      "alias": "society",
-      "iconType": 2,
-      "priority": 10000
-    },
-    {
-      "id": 3,
-      "name": "Кино",
-      "alias": "movie",
-      "iconType": 3,
-      "priority": 10000
-    },
-    {
-      "id": 4,
-      "parentId": 3,
-      "name": "Онлайн кинотеатр",
-      "iconType": 3,
-      "priority": 5000
-    },
-    {
-      "id": 5,
-      "parentId": 3,
-      "name": "Кинопортал",
-      "iconType": 3,
-      "priority": 5000
-    },
-    {
-      "id": 6,
-      "parentId": 2,
-      "name": "Социальная сеть",
-      "iconType": 3,
-      "priority": 5000
-    },
-    {
-      "id": 7,
-      "parentId": 0,
-      "name": "Разработчику",
-      "alias": "develop",
-      "iconType": 3,
-      "priority": 10000
-    },
-    {
-      "id": 8,
-      "parentId": 0,
-      "name": "Финансы",
-      "alias": "finance",
-      "iconType": 3,
-      "priority": 10000
-    },
-    {
-      "id": 9,
-      "parentId": 0,
-      "name": "Новости",
-      "alias": "news",
-      "iconType": 3,
-      "priority": 10000
-    }
+  {
+    "id": 1,
+    "name": "Новости",
+    "alias": "news",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 2,
+    "name": "Общение",
+    "alias": "society",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 3,
+    "name": "Интернет",
+    "alias": "internet",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 4,
+    "name": "Разработчику",
+    "alias": "developer",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 5,
+    "name": "Учеба",
+    "alias": "study",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 6,
+    "name": "Кино",
+    "alias": "movie",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 7,
+    "name": "Музыка",
+    "alias": "music",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 8,
+    "name": "Игры",
+    "alias": "games",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 9,
+    "name": "Графика",
+    "alias": "graphics",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 10,
+    "name": "Фото",
+    "alias": "foto",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 11,
+    "name": "Видео",
+    "alias": "video",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 12,
+    "name": "Туризм",
+    "alias": "travel",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 13,
+    "name": "Авто",
+    "alias": "auto",
+    "iconType": 1,
+    "priority": 10000
+  },
+  {
+    "id": 14,
+    "name": "Недвижимость",
+    "alias": "realty",
+    "iconType": 1,
+    "priority": 10000
+  }
 ]

@@ -16,13 +16,13 @@
 
 @media (max-width: $desktop) {
     body {
-        --services-gap: 22px;
+        --services-gap: 18px;
     }
 }
 
 @media (max-width: $tablet-l) {
     body {
-        --services-gap: 18px;
+        --services-gap: 16px;
     }
 
     .wrapper {
