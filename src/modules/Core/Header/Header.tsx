@@ -12,7 +12,13 @@ export const Header: FC = () => {
 
     return (
         <div className={css.header}>
-            <Search />
+            <div className={css.top}>
+                <Search />
+                <div className={css.rec}>
+                    <span>Жалобы и предложения:</span>
+                    <span className={css.mail}>boo-baa-boo@yandex.ru</span>
+                </div>
+            </div>
             {isMobile && <Navigation />}
         </div>
     );

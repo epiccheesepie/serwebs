@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    flex-grow: 1;
 }
 
 .searchIcon {
@@ -23,11 +24,12 @@
     --padding-left: 60px;
 
     height: 42px;
-    width: calc(52% - var(--padding-left));
+    width: calc(60% - var(--padding-left));
     background-color: $body-light;
     border: 1px solid transparent;
     border-radius: 24px;
     padding-left: var(--padding-left);
+    margin-right: 20px;
 
     font-family: 'SF Pro Display', sans-serif;
     color: #fff;
@@ -67,6 +69,12 @@
         & img {
             width: 16px;
         }
+    }
+}
+
+@media (max-width: $tablet) {
+    .search {
+        margin-right: 0;
     }
 }
 

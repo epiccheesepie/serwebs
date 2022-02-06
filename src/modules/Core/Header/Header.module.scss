@@ -1,5 +1,30 @@
 @import '../../../global.scss';
 
+.top {
+    display: flex;
+    align-items: center;
+}
+
+.rec {
+    display: flex;
+    flex-direction: column;
+
+    color: $white-text;
+    font-weight: 100;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+}
+
+.mail {
+    text-decoration: underline;
+}
+
+@media (max-width: $tablet) {
+    .rec {
+        display: none;
+    }
+}
+
 @media (max-width: $mobile-l) {
     .header {
         position: sticky;
