@@ -3,7 +3,7 @@
 /.vscode/
 
 # dependencies
-/node_modules
+client/node_modules
 /.pnp
 .pnp.js
 
@@ -11,7 +11,7 @@
 /coverage
 
 # production
-/build
+client/build
 
 # misc
 .DS_Store
@@ -25,4 +25,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # assets
-/_assets
+client/_assets
+services.txt
+client/src/assets
+
+#server
+server

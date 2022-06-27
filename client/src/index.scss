@@ -1,0 +1,134 @@
+@import './assets/fonts.scss';
+@import './global.scss';
+
+:root {
+    --services-gap: 16px;
+    --left-side-bar-width: 262px;
+    --font-size: 16px;
+    --header-top-margin: 22px;
+}
+
+html,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: var(--font-size);
+    background-color: $body;
+    min-width: $mobile;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.loaderWrapper {
+    --loader-size: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: calc(100vh - var(--loader-size) / 2);
+
+    margin-top: var(--header-top-margin);
+    padding-bottom: 30px;
+
+    .loader {
+        width: var(--loader-size);
+        height: var(--loader-size);
+        border-radius: 50%;
+        border: 5px solid $gold;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+
+        animation: loader 0.75s infinite linear;
+    }
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: $tablet-m) {
+    :root {
+        --font-size: 14px;
+        --header-top-margin: 18px;
+    }
+
+    .loaderWrapper {
+        --loader-size: 200px;
+    }
+}
+
+@media (max-width: $tablet-l) {
+    .loaderWrapper {
+        --loader-size: 250px;
+    }
+}
+
+@media (max-width: $mobile-l) {
+    :root {
+        --font-size: 12px;
+        --header-top-margin: 14px;
+    }
+
+    .loaderWrapper {
+        --loader-size: 150px;
+    }
+}
+
+@media (max-width: $mobile-m) {
+    :root {
+        --font-size: 10px;
+    }
+
+    .loaderWrapper {
+        --loader-size: 125px;
+    }
+}
+
+@media (min-width: $desktop) {
+    main {
+        width: auto;
+    }
+}
+
+@media (min-width: $desktop-m) {
+    :root {
+        --services-gap: 20px;
+        --left-side-bar-width: 300px;
+        --font-size: 18px;
+        --header-top-margin: 28px;
+    }
+}
+
+@media (min-width: $desktop-l) {
+    main {
+        display: flex;
+        flex-grow: 1;
+
+        width: calc(1720px + var(--left-side-bar-width));
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .loaderWrapper {
+        width: 100%;
+    }
+}
